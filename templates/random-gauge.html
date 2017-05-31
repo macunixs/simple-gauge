@@ -115,6 +115,7 @@
         animatedValue: true,
         listeners: {
             value: function(value) {
+		    // EDIT THIS PART : to display the numeric character below the gauge needle
                 this.update({ units: parseFloat(value.toFixed(2), 100) + ' rand' });
             }
         }
@@ -129,7 +130,8 @@
     function animateGauges() {
         document.gauges.forEach(function(gauge) {
             timers.push(setInterval(function() {
-
+		// EDIT THIS PART : put any data that you want to display here
+		// for this example I'm using "data.num_json" that came from our Python code
                 gauge.value = data.num_json;
 
             }, gauge.animation.duration + 500));
