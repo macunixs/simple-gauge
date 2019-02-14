@@ -48,7 +48,7 @@ def stream():
     return Response(generate_random(), mimetype='text/event-stream')
 
 def get_pulse(channel):
-    global speedval
+    global speedval,pulse,start,distance,multiplier,rpm
     cycle = 0
     pulse+=1
     cycle+=1
